@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: gerenciador-tarefas-api
+    env: docker
+    plan: free
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
+      # As variáveis abaixo utilizam sync: false por segurança para que o Render
+      # solicite os valores no painel ao invés de deixá-los expostos no repositório.
+      - key: SPRING_DATASOURCE_URL
+        sync: false
+      - key: SPRING_DATASOURCE_USERNAME
+        sync: false
+      - key: SPRING_DATASOURCE_PASSWORD
+        sync: false
