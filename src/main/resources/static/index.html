@@ -17,15 +17,30 @@
     <main class="page-main">
         <section class="form-card">
             <h2>Nova tarefa</h2>
+
             <form id="task-form">
                 <div class="field-group">
                     <label for="titulo">Título</label>
-                    <input type="text" id="titulo" name="titulo" required minlength="3" maxlength="100" />
+                    <input
+                        type="text"
+                        id="titulo"
+                        name="titulo"
+                        required
+                        minlength="3"
+                        maxlength="100"
+                    />
                 </div>
+
                 <div class="field-group">
                     <label for="descricao">Descrição</label>
-                    <textarea id="descricao" name="descricao" required maxlength="500"></textarea>
+                    <textarea
+                        id="descricao"
+                        name="descricao"
+                        required
+                        maxlength="500"
+                    ></textarea>
                 </div>
+
                 <div class="row-group">
                     <div class="field-group">
                         <label for="prioridade">Prioridade</label>
@@ -35,6 +50,7 @@
                             <option value="NO_PRAZO">No Prazo</option>
                         </select>
                     </div>
+
                     <div class="field-group">
                         <label for="diaSemana">Dia da semana</label>
                         <select id="diaSemana" name="diaSemana" required>
@@ -48,39 +64,71 @@
                         </select>
                     </div>
                 </div>
+
                 <div class="row-group">
                     <div class="field-group">
                         <label for="dataTarefa">Data da tarefa</label>
-                        <input type="date" id="dataTarefa" name="dataTarefa" required />
+                        <input
+                            type="date"
+                            id="dataTarefa"
+                            name="dataTarefa"
+                            required
+                        />
                     </div>
+
                     <div class="field-group priority-preview">
                         <span>Etiqueta:</span>
-                        <span id="badge" class="badge badge-vermelho">URGENTE</span>
+                        <span id="badge" class="badge badge-vermelho">
+                            URGENTE
+                        </span>
                     </div>
                 </div>
-                <button type="submit" class="btn-primary">Adicionar tarefa</button>
-                <p class="hint">As tarefas são exibidas agrupadas pelo dia da semana.</p>
+
+                <button type="submit" class="btn-primary">
+                    Adicionar tarefa
+                </button>
+
+                <p class="hint">
+                    As tarefas são exibidas agrupadas pelo dia da semana.
+                </p>
             </form>
         </section>
 
         <section class="days-grid" id="dias-container"></section>
     </main>
 
+    <!-- Template dos cards -->
     <template id="task-card">
         <article class="task-card">
+
             <div class="task-header">
                 <strong class="task-title"></strong>
-                <span class="task-badge"></span>
+
+                <div class="task-actions">
+                    <span class="task-badge"></span>
+
+                    <button
+                        type="button"
+                        class="btn-delete"
+                        title="Excluir tarefa"
+                    >
+                        🗑️
+                    </button>
+                </div>
             </div>
+
             <p class="task-description"></p>
+
             <div class="task-footer">
                 <span class="task-meta"></span>
+
                 <label class="toggle-switch">
                     <input type="checkbox" class="task-toggle" />
                     <span class="slider"></span>
                     <span class="toggle-label">Concluída</span>
                 </label>
             </div>
+
         </article>
     </template>
 
